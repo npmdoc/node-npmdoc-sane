@@ -1,0 +1,1451 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/amasad/sane"
+
+    >sane (v1.6.0)</a>
+</h1>
+<h4>Sane aims to be fast, small, and reliable file system watcher.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sane">module sane</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher">
+            function <span class="apidocSignatureSpan">sane.</span>NodeWatcher
+            <span class="apidocSignatureSpan">(dir, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.PollWatcher">
+            function <span class="apidocSignatureSpan">sane.</span>PollWatcher
+            <span class="apidocSignatureSpan">(dir, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.WatchmanWatcher">
+            function <span class="apidocSignatureSpan">sane.</span>WatchmanWatcher
+            <span class="apidocSignatureSpan">(dir, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sane.</span>NodeWatcher.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sane.</span>PollWatcher.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sane.</span>WatchmanWatcher.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sane.</span>common</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sane.NodeWatcher">module sane.NodeWatcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.NodeWatcher">
+            function <span class="apidocSignatureSpan">sane.</span>NodeWatcher
+            <span class="apidocSignatureSpan">(dir, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sane.NodeWatcher.prototype">module sane.NodeWatcher.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.close">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.detectChangedFile">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>detectChangedFile
+            <span class="apidocSignatureSpan">(dir, event, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.emitEvent">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>emitEvent
+            <span class="apidocSignatureSpan">(type, file, stat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.normalizeChange">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>normalizeChange
+            <span class="apidocSignatureSpan">(dir, event, file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.processChange">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>processChange
+            <span class="apidocSignatureSpan">(dir, event, file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.register">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>register
+            <span class="apidocSignatureSpan">(filepath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.registered">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>registered
+            <span class="apidocSignatureSpan">(fullpath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.stopWatching">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>stopWatching
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.unregister">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>unregister
+            <span class="apidocSignatureSpan">(filepath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.unregisterDir">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>unregisterDir
+            <span class="apidocSignatureSpan">(dirpath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher.prototype.watchdir">
+            function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>watchdir
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sane.PollWatcher">module sane.PollWatcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.PollWatcher.PollWatcher">
+            function <span class="apidocSignatureSpan">sane.</span>PollWatcher
+            <span class="apidocSignatureSpan">(dir, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sane.PollWatcher.prototype">module sane.PollWatcher.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.PollWatcher.prototype.close">
+            function <span class="apidocSignatureSpan">sane.PollWatcher.prototype.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.PollWatcher.prototype.emitEvent">
+            function <span class="apidocSignatureSpan">sane.PollWatcher.prototype.</span>emitEvent
+            <span class="apidocSignatureSpan">(type, file, stat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.PollWatcher.prototype.filter">
+            function <span class="apidocSignatureSpan">sane.PollWatcher.prototype.</span>filter
+            <span class="apidocSignatureSpan">(filepath, stat)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.PollWatcher.prototype.init">
+            function <span class="apidocSignatureSpan">sane.PollWatcher.prototype.</span>init
+            <span class="apidocSignatureSpan">(monitor)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sane.WatchmanWatcher">module sane.WatchmanWatcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.WatchmanWatcher.WatchmanWatcher">
+            function <span class="apidocSignatureSpan">sane.</span>WatchmanWatcher
+            <span class="apidocSignatureSpan">(dir, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sane.WatchmanWatcher.prototype">module sane.WatchmanWatcher.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.WatchmanWatcher.prototype.close">
+            function <span class="apidocSignatureSpan">sane.WatchmanWatcher.prototype.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.WatchmanWatcher.prototype.emitEvent">
+            function <span class="apidocSignatureSpan">sane.WatchmanWatcher.prototype.</span>emitEvent
+            <span class="apidocSignatureSpan">( eventType, filepath, root, stat )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.WatchmanWatcher.prototype.handleChangeEvent">
+            function <span class="apidocSignatureSpan">sane.WatchmanWatcher.prototype.</span>handleChangeEvent
+            <span class="apidocSignatureSpan">(resp)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.WatchmanWatcher.prototype.handleFileChange">
+            function <span class="apidocSignatureSpan">sane.WatchmanWatcher.prototype.</span>handleFileChange
+            <span class="apidocSignatureSpan">(changeDescriptor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.WatchmanWatcher.prototype.init">
+            function <span class="apidocSignatureSpan">sane.WatchmanWatcher.prototype.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sane.common">module sane.common</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.common.assignOptions">
+            function <span class="apidocSignatureSpan">sane.common.</span>assignOptions
+            <span class="apidocSignatureSpan">(watcher, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.common.isFileIncluded">
+            function <span class="apidocSignatureSpan">sane.common.</span>isFileIncluded
+            <span class="apidocSignatureSpan">(globs, dot, doIgnore, relativePath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">sane.common.</span>DEFAULT_DELAY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">sane.common.</span>ADD_EVENT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">sane.common.</span>ALL_EVENT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">sane.common.</span>CHANGE_EVENT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">sane.common.</span>DELETE_EVENT</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sane" id="apidoc.module.sane">module sane</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher" id="apidoc.element.sane.NodeWatcher">
+        function <span class="apidocSignatureSpan">sane.</span>NodeWatcher
+        <span class="apidocSignatureSpan">(dir, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NodeWatcher(dir, opts) {
+  opts = common.assignOptions(this, opts);
+
+  this.watched = Object.create(null);
+  this.changeTimers = Object.create(null);
+  this.dirRegistery = Object.create(null);
+  this.root = path.resolve(dir);
+  this.watchdir = this.watchdir.bind(this);
+  this.register = this.register.bind(this);
+
+  this.watchdir(this.root);
+  recReaddir(
+    this.root,
+    this.watchdir,
+    this.register,
+    this.emit.bind(this, &#x27;ready&#x27;),
+    this.ignored
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `dot`: enables watching files/directories that start with a dot.
+* `ignored`: a glob, regex, function, or array of any combination.
+
+For the glob pattern documentation, see [minimatch](https://github.com/isaacs/minimatch).
+If you choose to use `watchman` you&#x27;ll have to [install watchman yourself](https://facebook.github.io/watchman/docs/install
+.html)).
+For the ignored options, see [anymatch](https://github.com/es128/anymatch).
+
+### sane.<span class="apidocCodeKeywordSpan">NodeWatcher</span>(dir, options)
+
+The default watcher class. Uses `fs.watch` under the hood, and takes the same options as `sane(options, dir)`.
+
+### sane.WatchmanWatcher(dir, options)
+
+The watchman watcher class. Takes the same options as `sane(options, dir)`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.PollWatcher" id="apidoc.element.sane.PollWatcher">
+        function <span class="apidocSignatureSpan">sane.</span>PollWatcher
+        <span class="apidocSignatureSpan">(dir, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PollWatcher(dir, opts) {
+  opts = common.assignOptions(this, opts);
+
+  this.watched = Object.create(null);
+  this.root = path.resolve(dir);
+
+  watch.createMonitor(
+    this.root,
+    { interval: opts.interval || DEFAULT_DELAY,
+      filter: this.filter.bind(this)
+    },
+    this.init.bind(this)
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The default watcher class. Uses `fs.watch` under the hood, and takes the same options as `sane(options, dir)`.
+
+### sane.WatchmanWatcher(dir, options)
+
+The watchman watcher class. Takes the same options as `sane(options, dir)`.
+
+### sane.<span class="apidocCodeKeywordSpan">PollWatcher</span>(dir, options)
+
+The polling watcher class. Takes the same options as `sane(options, dir)` with the addition of:
+
+* interval: indicates how often the files should be polled. (passed to fs.watchFile)
+
+### sane.{Node|Watchman|Poll}Watcher#close
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.WatchmanWatcher" id="apidoc.element.sane.WatchmanWatcher">
+        function <span class="apidocSignatureSpan">sane.</span>WatchmanWatcher
+        <span class="apidocSignatureSpan">(dir, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WatchmanWatcher(dir, opts) {
+  opts = common.assignOptions(this, opts);
+  this.root = path.resolve(dir);
+  this.init();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you choose to use `watchman` you&#x27;ll have to [install watchman yourself](https://facebook.github.io/watchman/docs/install
+.html)).
+For the ignored options, see [anymatch](https://github.com/es128/anymatch).
+
+### sane.NodeWatcher(dir, options)
+
+The default watcher class. Uses `fs.watch` under the hood, and takes the same options as `sane(options, dir)`.
+
+### sane.<span class="apidocCodeKeywordSpan">WatchmanWatcher</span>(dir, options)
+
+The watchman watcher class. Takes the same options as `sane(options, dir)`.
+
+### sane.PollWatcher(dir, options)
+
+The polling watcher class. Takes the same options as `sane(options, dir)` with the addition of:
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sane.NodeWatcher" id="apidoc.module.sane.NodeWatcher">module sane.NodeWatcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.NodeWatcher" id="apidoc.element.sane.NodeWatcher.NodeWatcher">
+        function <span class="apidocSignatureSpan">sane.</span>NodeWatcher
+        <span class="apidocSignatureSpan">(dir, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NodeWatcher(dir, opts) {
+  opts = common.assignOptions(this, opts);
+
+  this.watched = Object.create(null);
+  this.changeTimers = Object.create(null);
+  this.dirRegistery = Object.create(null);
+  this.root = path.resolve(dir);
+  this.watchdir = this.watchdir.bind(this);
+  this.register = this.register.bind(this);
+
+  this.watchdir(this.root);
+  recReaddir(
+    this.root,
+    this.watchdir,
+    this.register,
+    this.emit.bind(this, &#x27;ready&#x27;),
+    this.ignored
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `dot`: enables watching files/directories that start with a dot.
+* `ignored`: a glob, regex, function, or array of any combination.
+
+For the glob pattern documentation, see [minimatch](https://github.com/isaacs/minimatch).
+If you choose to use `watchman` you&#x27;ll have to [install watchman yourself](https://facebook.github.io/watchman/docs/install
+.html)).
+For the ignored options, see [anymatch](https://github.com/es128/anymatch).
+
+### sane.<span class="apidocCodeKeywordSpan">NodeWatcher</span>(dir, options)
+
+The default watcher class. Uses `fs.watch` under the hood, and takes the same options as `sane(options, dir)`.
+
+### sane.WatchmanWatcher(dir, options)
+
+The watchman watcher class. Takes the same options as `sane(options, dir)`.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sane.NodeWatcher.prototype" id="apidoc.module.sane.NodeWatcher.prototype">module sane.NodeWatcher.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.close" id="apidoc.element.sane.NodeWatcher.prototype.close">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (callback) {
+  Object.keys(this.watched).forEach(this.stopWatching, this);
+  this.removeAllListeners();
+  if (typeof callback === &#x27;function&#x27;) {
+    setImmediate(callback.bind(null, null, true));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var watcher = sane(&#x27;path/to/dir&#x27;, {glob: [&#x27;**/*.js&#x27;, &#x27;**/*.css&#x27;]});
+watcher.on(&#x27;ready&#x27;, function () { console.log(&#x27;ready&#x27;) });
+watcher.on(&#x27;change&#x27;, function (filepath, root, stat) { console.log(&#x27;file changed&#x27;, filepath); });
+watcher.on(&#x27;add&#x27;, function (filepath, root, stat) { console.log(&#x27;file added&#x27;, filepath); });
+watcher.on(&#x27;delete&#x27;, function (filepath, root) { console.log(&#x27;file deleted&#x27;, filepath); });
+// close
+watcher.<span class="apidocCodeKeywordSpan">close</span>();
+```
+
+options:
+
+* `glob`: a single string glob pattern or an array of them.
+* `poll`: puts the watcher in polling mode. Under the hood that means `fs.watchFile`.
+* `watchman`: makes the watcher use [watchman](https://facebook.github.io/watchman/).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.detectChangedFile" id="apidoc.element.sane.NodeWatcher.prototype.detectChangedFile">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>detectChangedFile
+        <span class="apidocSignatureSpan">(dir, event, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">detectChangedFile = function (dir, event, callback) {
+  if (!this.dirRegistery[dir]) {
+    return;
+  }
+
+  var found = false;
+  var closest = {mtime: 0};
+  var c = 0;
+  Object.keys(this.dirRegistery[dir]).forEach(function(file, i, arr) {
+    fs.lstat(path.join(dir, file), function(error, stat) {
+      if (found) {
+        return;
+      }
+
+      if (error) {
+        if (error.code === &#x27;ENOENT&#x27; ||
+            (platform === &#x27;win32&#x27; &#x26;&#x26; error.code === &#x27;EPERM&#x27;)) {
+          found = true;
+          callback(file);
+        } else {
+          this.emit(&#x27;error&#x27;, error);
+        }
+      } else {
+        if (stat.mtime &#x3e; closest.mtime) {
+          stat.file = file;
+          closest = stat;
+        }
+        if (arr.length === ++c) {
+          callback(closest.file);
+        }
+      }
+    }.bind(this));
+  }, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.emitEvent" id="apidoc.element.sane.NodeWatcher.prototype.emitEvent">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>emitEvent
+        <span class="apidocSignatureSpan">(type, file, stat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emitEvent = function (type, file, stat) {
+  var key = type + &#x27;-&#x27; + file;
+  var addKey = ADD_EVENT + &#x27;-&#x27; + file;
+  if (type === CHANGE_EVENT &#x26;&#x26; this.changeTimers[addKey]) {
+    // Ignore the change event that is immediately fired after an add event.
+    // (This happens on Linux).
+    return;
+  }
+  clearTimeout(this.changeTimers[key]);
+  this.changeTimers[key] = setTimeout(function() {
+    delete this.changeTimers[key];
+    this.emit(type, file, this.root, stat);
+    this.emit(ALL_EVENT, type, file, this.root, stat);
+  }.bind(this), DEFAULT_DELAY);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.normalizeChange" id="apidoc.element.sane.NodeWatcher.prototype.normalizeChange">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>normalizeChange
+        <span class="apidocSignatureSpan">(dir, event, file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normalizeChange = function (dir, event, file) {
+  if (!file) {
+    this.detectChangedFile(dir, event, function(actualFile) {
+      if (actualFile) {
+        this.processChange(dir, event, actualFile);
+      }
+    }.bind(this));
+  } else {
+    this.processChange(dir, event, path.normalize(file));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.processChange" id="apidoc.element.sane.NodeWatcher.prototype.processChange">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>processChange
+        <span class="apidocSignatureSpan">(dir, event, file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">processChange = function (dir, event, file) {
+  var fullPath = path.join(dir, file);
+  var relativePath = path.join(path.relative(this.root, dir), file);
+  fs.lstat(fullPath, function(error, stat) {
+    if (error &#x26;&#x26; error.code !== &#x27;ENOENT&#x27;) {
+      this.emit(&#x27;error&#x27;, error);
+    } else if (!error &#x26;&#x26; stat.isDirectory()) {
+      // win32 emits usless change events on dirs.
+      if (event !== &#x27;change&#x27;) {
+        this.watchdir(fullPath);
+        if (common.isFileIncluded(
+          this.globs,
+          this.dot,
+          this.doIgnore,
+          relativePath)) {
+          this.emitEvent(ADD_EVENT, relativePath, stat);
+        }
+      }
+    } else {
+      var registered = this.registered(fullPath);
+      if (error &#x26;&#x26; error.code === &#x27;ENOENT&#x27;) {
+        this.unregister(fullPath);
+        this.stopWatching(fullPath);
+        this.unregisterDir(fullPath);
+        if (registered) {
+          this.emitEvent(DELETE_EVENT, relativePath);
+        }
+      } else if (registered) {
+        this.emitEvent(CHANGE_EVENT, relativePath, stat);
+      } else {
+        if (this.register(fullPath)) {
+          this.emitEvent(ADD_EVENT, relativePath, stat);
+        }
+      }
+    }
+  }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.register" id="apidoc.element.sane.NodeWatcher.prototype.register">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>register
+        <span class="apidocSignatureSpan">(filepath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (filepath) {
+  var relativePath = path.relative(this.root, filepath);
+  if (!common.isFileIncluded(
+    this.globs,
+    this.dot,
+    this.doIgnore,
+    relativePath)) {
+    return false;
+  }
+
+  var dir = path.dirname(filepath);
+  if (!this.dirRegistery[dir]) {
+    this.dirRegistery[dir] = Object.create(null);
+  }
+
+  var filename = path.basename(filepath);
+  this.dirRegistery[dir][filename] = true;
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.registered" id="apidoc.element.sane.NodeWatcher.prototype.registered">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>registered
+        <span class="apidocSignatureSpan">(fullpath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registered = function (fullpath) {
+  var dir = path.dirname(fullpath);
+  return this.dirRegistery[fullpath] ||
+    this.dirRegistery[dir] &#x26;&#x26; this.dirRegistery[dir][path.basename(fullpath)];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.stopWatching" id="apidoc.element.sane.NodeWatcher.prototype.stopWatching">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>stopWatching
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopWatching = function (dir) {
+  if (this.watched[dir]) {
+    this.watched[dir].close();
+    delete this.watched[dir];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.unregister" id="apidoc.element.sane.NodeWatcher.prototype.unregister">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>unregister
+        <span class="apidocSignatureSpan">(filepath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unregister = function (filepath) {
+  var dir = path.dirname(filepath);
+  if (this.dirRegistery[dir]) {
+    var filename = path.basename(filepath);
+    delete this.dirRegistery[dir][filename];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.unregisterDir" id="apidoc.element.sane.NodeWatcher.prototype.unregisterDir">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>unregisterDir
+        <span class="apidocSignatureSpan">(dirpath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unregisterDir = function (dirpath) {
+  if (this.dirRegistery[dirpath]) {
+    delete this.dirRegistery[dirpath];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.NodeWatcher.prototype.watchdir" id="apidoc.element.sane.NodeWatcher.prototype.watchdir">
+        function <span class="apidocSignatureSpan">sane.NodeWatcher.prototype.</span>watchdir
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watchdir = function (dir) {
+  if (this.watched[dir]) {
+    return;
+  }
+
+  var watcher = fs.watch(
+    dir,
+    { persistent: true },
+    this.normalizeChange.bind(this, dir)
+  );
+  this.watched[dir] = watcher;
+
+  // Workaround Windows node issue #4337.
+  if (platform === &#x27;win32&#x27;) {
+    watcher.on(&#x27;error&#x27;, function(error) {
+      if (error.code !== &#x27;EPERM&#x27;) {
+        throw error;
+      }
+    });
+  }
+
+  if (this.root !== dir) {
+    this.register(dir);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sane.PollWatcher" id="apidoc.module.sane.PollWatcher">module sane.PollWatcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sane.PollWatcher.PollWatcher" id="apidoc.element.sane.PollWatcher.PollWatcher">
+        function <span class="apidocSignatureSpan">sane.</span>PollWatcher
+        <span class="apidocSignatureSpan">(dir, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PollWatcher(dir, opts) {
+  opts = common.assignOptions(this, opts);
+
+  this.watched = Object.create(null);
+  this.root = path.resolve(dir);
+
+  watch.createMonitor(
+    this.root,
+    { interval: opts.interval || DEFAULT_DELAY,
+      filter: this.filter.bind(this)
+    },
+    this.init.bind(this)
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The default watcher class. Uses `fs.watch` under the hood, and takes the same options as `sane(options, dir)`.
+
+### sane.WatchmanWatcher(dir, options)
+
+The watchman watcher class. Takes the same options as `sane(options, dir)`.
+
+### sane.<span class="apidocCodeKeywordSpan">PollWatcher</span>(dir, options)
+
+The polling watcher class. Takes the same options as `sane(options, dir)` with the addition of:
+
+* interval: indicates how often the files should be polled. (passed to fs.watchFile)
+
+### sane.{Node|Watchman|Poll}Watcher#close
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sane.PollWatcher.prototype" id="apidoc.module.sane.PollWatcher.prototype">module sane.PollWatcher.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sane.PollWatcher.prototype.close" id="apidoc.element.sane.PollWatcher.prototype.close">
+        function <span class="apidocSignatureSpan">sane.PollWatcher.prototype.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (callback) {
+  Object.keys(this.watched).forEach(function(filepath) {
+    fs.unwatchFile(filepath);
+  });
+  this.removeAllListeners();
+  if (typeof callback === &#x27;function&#x27;) {
+    setImmediate(callback.bind(null, null, true));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var watcher = sane(&#x27;path/to/dir&#x27;, {glob: [&#x27;**/*.js&#x27;, &#x27;**/*.css&#x27;]});
+watcher.on(&#x27;ready&#x27;, function () { console.log(&#x27;ready&#x27;) });
+watcher.on(&#x27;change&#x27;, function (filepath, root, stat) { console.log(&#x27;file changed&#x27;, filepath); });
+watcher.on(&#x27;add&#x27;, function (filepath, root, stat) { console.log(&#x27;file added&#x27;, filepath); });
+watcher.on(&#x27;delete&#x27;, function (filepath, root) { console.log(&#x27;file deleted&#x27;, filepath); });
+// close
+watcher.<span class="apidocCodeKeywordSpan">close</span>();
+```
+
+options:
+
+* `glob`: a single string glob pattern or an array of them.
+* `poll`: puts the watcher in polling mode. Under the hood that means `fs.watchFile`.
+* `watchman`: makes the watcher use [watchman](https://facebook.github.io/watchman/).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.PollWatcher.prototype.emitEvent" id="apidoc.element.sane.PollWatcher.prototype.emitEvent">
+        function <span class="apidocSignatureSpan">sane.PollWatcher.prototype.</span>emitEvent
+        <span class="apidocSignatureSpan">(type, file, stat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emitEvent = function (type, file, stat) {
+  file = path.relative(this.root, file);
+
+  if (type === DELETE_EVENT) {
+    // Matching the non-polling API
+    stat = null;
+  }
+
+  this.emit(type, file, this.root, stat);
+  this.emit(ALL_EVENT, type, file, this.root, stat);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.PollWatcher.prototype.filter" id="apidoc.element.sane.PollWatcher.prototype.filter">
+        function <span class="apidocSignatureSpan">sane.PollWatcher.prototype.</span>filter
+        <span class="apidocSignatureSpan">(filepath, stat)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (filepath, stat) {
+  return stat.isDirectory() || common.isFileIncluded(
+    this.globs,
+    this.dot,
+    this.doIgnore,
+    path.relative(this.root, filepath)
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.PollWatcher.prototype.init" id="apidoc.element.sane.PollWatcher.prototype.init">
+        function <span class="apidocSignatureSpan">sane.PollWatcher.prototype.</span>init
+        <span class="apidocSignatureSpan">(monitor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (monitor) {
+  this.watched = monitor.files;
+  monitor.on(&#x27;changed&#x27;, this.emitEvent.bind(this, CHANGE_EVENT));
+  monitor.on(&#x27;removed&#x27;, this.emitEvent.bind(this, DELETE_EVENT));
+  monitor.on(&#x27;created&#x27;, this.emitEvent.bind(this, ADD_EVENT));
+  // 1 second wait because mtime is second-based.
+  setTimeout(this.emit.bind(this, &#x27;ready&#x27;), 1000);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sane.WatchmanWatcher" id="apidoc.module.sane.WatchmanWatcher">module sane.WatchmanWatcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sane.WatchmanWatcher.WatchmanWatcher" id="apidoc.element.sane.WatchmanWatcher.WatchmanWatcher">
+        function <span class="apidocSignatureSpan">sane.</span>WatchmanWatcher
+        <span class="apidocSignatureSpan">(dir, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WatchmanWatcher(dir, opts) {
+  opts = common.assignOptions(this, opts);
+  this.root = path.resolve(dir);
+  this.init();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you choose to use `watchman` you&#x27;ll have to [install watchman yourself](https://facebook.github.io/watchman/docs/install
+.html)).
+For the ignored options, see [anymatch](https://github.com/es128/anymatch).
+
+### sane.NodeWatcher(dir, options)
+
+The default watcher class. Uses `fs.watch` under the hood, and takes the same options as `sane(options, dir)`.
+
+### sane.<span class="apidocCodeKeywordSpan">WatchmanWatcher</span>(dir, options)
+
+The watchman watcher class. Takes the same options as `sane(options, dir)`.
+
+### sane.PollWatcher(dir, options)
+
+The polling watcher class. Takes the same options as `sane(options, dir)` with the addition of:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sane.WatchmanWatcher.prototype" id="apidoc.module.sane.WatchmanWatcher.prototype">module sane.WatchmanWatcher.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sane.WatchmanWatcher.prototype.close" id="apidoc.element.sane.WatchmanWatcher.prototype.close">
+        function <span class="apidocSignatureSpan">sane.WatchmanWatcher.prototype.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (callback) {
+  this.client.removeAllListeners();
+  this.client.end();
+  callback &#x26;&#x26; callback(null, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var watcher = sane(&#x27;path/to/dir&#x27;, {glob: [&#x27;**/*.js&#x27;, &#x27;**/*.css&#x27;]});
+watcher.on(&#x27;ready&#x27;, function () { console.log(&#x27;ready&#x27;) });
+watcher.on(&#x27;change&#x27;, function (filepath, root, stat) { console.log(&#x27;file changed&#x27;, filepath); });
+watcher.on(&#x27;add&#x27;, function (filepath, root, stat) { console.log(&#x27;file added&#x27;, filepath); });
+watcher.on(&#x27;delete&#x27;, function (filepath, root) { console.log(&#x27;file deleted&#x27;, filepath); });
+// close
+watcher.<span class="apidocCodeKeywordSpan">close</span>();
+```
+
+options:
+
+* `glob`: a single string glob pattern or an array of them.
+* `poll`: puts the watcher in polling mode. Under the hood that means `fs.watchFile`.
+* `watchman`: makes the watcher use [watchman](https://facebook.github.io/watchman/).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.WatchmanWatcher.prototype.emitEvent" id="apidoc.element.sane.WatchmanWatcher.prototype.emitEvent">
+        function <span class="apidocSignatureSpan">sane.WatchmanWatcher.prototype.</span>emitEvent
+        <span class="apidocSignatureSpan">( eventType, filepath, root, stat )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emitEvent = function ( eventType, filepath, root, stat ) {
+  this.emit(eventType, filepath, root, stat);
+  this.emit(ALL_EVENT, eventType, filepath, root, stat);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.WatchmanWatcher.prototype.handleChangeEvent" id="apidoc.element.sane.WatchmanWatcher.prototype.handleChangeEvent">
+        function <span class="apidocSignatureSpan">sane.WatchmanWatcher.prototype.</span>handleChangeEvent
+        <span class="apidocSignatureSpan">(resp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleChangeEvent = function (resp) {
+  assert.equal(resp.subscription, SUB_NAME, &#x27;Invalid subscription event.&#x27;);
+  if (Array.isArray(resp.files)) {
+    resp.files.forEach(this.handleFileChange, this);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.WatchmanWatcher.prototype.handleFileChange" id="apidoc.element.sane.WatchmanWatcher.prototype.handleFileChange">
+        function <span class="apidocSignatureSpan">sane.WatchmanWatcher.prototype.</span>handleFileChange
+        <span class="apidocSignatureSpan">(changeDescriptor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleFileChange = function (changeDescriptor) {
+  var self = this;
+  var absPath;
+  var relativePath;
+
+  if (this.capabilities.relative_root) {
+    relativePath = changeDescriptor.name;
+    absPath = path.join(
+      this.watchProjectInfo.root,
+      this.watchProjectInfo.relativePath,
+      relativePath
+    );
+  } else {
+    absPath = path.join(this.root, changeDescriptor.name);
+    relativePath = changeDescriptor.name;
+  }
+
+  if (!(self.capabilities.wildmatch &#x26;&#x26; !this.hasIgnore) &#x26;&#x26;
+      !common.isFileIncluded(
+        this.globs,
+        this.dot,
+        this.doIgnore,
+        relativePath)) {
+    return;
+  }
+
+  if (!changeDescriptor.exists) {
+    self.emitEvent(DELETE_EVENT, relativePath, self.root);
+  } else {
+    fs.lstat(absPath, function(error, stat) {
+      // Files can be deleted between the event and the lstat call
+      // the most reliable thing to do here is to ignore the event.
+      if (error &#x26;&#x26; error.code === &#x27;ENOENT&#x27;) {
+        return;
+      }
+
+      if (handleError(self, error)) {
+        return;
+      }
+
+      var eventType = changeDescriptor.new ? ADD_EVENT : CHANGE_EVENT;
+
+      // Change event on dirs are mostly useless.
+      if (!(eventType === CHANGE_EVENT &#x26;&#x26; stat.isDirectory())) {
+        self.emitEvent(eventType, relativePath, self.root, stat);
+      }
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.WatchmanWatcher.prototype.init" id="apidoc.element.sane.WatchmanWatcher.prototype.init">
+        function <span class="apidocSignatureSpan">sane.WatchmanWatcher.prototype.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  if (this.client) {
+    this.client.removeAllListeners();
+  }
+
+  var self = this;
+  this.client = new watchman.Client();
+  this.client.on(&#x27;error&#x27;, function(error) {
+    self.emit(&#x27;error&#x27;, error);
+  });
+  this.client.on(&#x27;subscription&#x27;, this.handleChangeEvent.bind(this));
+  this.client.on(&#x27;end&#x27;, function() {
+    console.warn(&#x27;[sane] Warning: Lost connection to watchman, reconnecting..&#x27;);
+    self.init();
+  });
+
+  this.watchProjectInfo = null;
+
+  function getWatchRoot() {
+    return self.watchProjectInfo ? self.watchProjectInfo.root : self.root;
+  }
+
+  function onCapability(error, resp) {
+    if (handleError(self, error)) {
+      // The Watchman watcher is unusable on this system, we cannot continue
+      return;
+    }
+
+    handleWarning(resp);
+
+    self.capabilities = resp.capabilities;
+
+    if (self.capabilities.relative_root) {
+      self.client.command(
+        [&#x27;watch-project&#x27;, getWatchRoot()], onWatchProject
+      );
+    } else {
+      self.client.command([&#x27;watch&#x27;, getWatchRoot()], onWatch);
+    }
+  }
+
+  function onWatchProject(error, resp) {
+    if (handleError(self, error)) {
+      return;
+    }
+
+    handleWarning(resp);
+
+    self.watchProjectInfo = {
+      root: resp.watch,
+      relativePath: resp.relative_path ? resp.relative_path : &#x27;&#x27;
+    };
+
+    self.client.command([&#x27;clock&#x27;, getWatchRoot()], onClock);
+  }
+
+
+  function onWatch(error, resp) {
+    if (handleError(self, error)) {
+      return;
+    }
+
+    handleWarning(resp);
+
+    self.client.command([&#x27;clock&#x27;, getWatchRoot()], onClock);
+  }
+
+  function onClock(error, resp) {
+    if (handleError(self, error)) {
+      return;
+    }
+
+    handleWarning(resp);
+
+    var options = {
+      fields: [&#x27;name&#x27;, &#x27;exists&#x27;, &#x27;new&#x27;],
+      since: resp.clock
+    };
+
+    // If the server has the wildmatch capability available it supports
+    // the recursive **/*.foo style match and we can offload our globs
+    // to the watchman server.  This saves both on data size to be
+    // communicated back to us and compute for evaluating the globs
+    // in our node process.
+    if (self.capabilities.wildmatch) {
+      if (self.globs.length === 0) {
+        if (!self.dot) {
+          // Make sure we honor the dot option if even we&#x27;re not using globs.
+          options.expression = [&#x27;match&#x27;, &#x27;**&#x27;, &#x27;wholename&#x27;, {
+            includedotfiles: false
+          }];
+        }
+      } else {
+        options.expression = [&#x27;anyof&#x27;];
+        for (var i in self.globs) {
+          options.expression.push([&#x27;match&#x27;, self.globs[i], &#x27;wholename&#x27;, {
+            includedotfiles: self.dot
+          }]);
+        }
+      }
+    }
+
+    if (self.capabilities.relative_root) {
+      options.relative_root = self.watchProjectInfo.relativePath;
+    }
+
+    self.client.command(
+      [&#x27;subscribe&#x27;, getWatchRoot(), SUB_NAME, options],
+      onSubscribe
+    );
+  }
+
+  function onSubscribe(error, resp) {
+    if (handleError(self, error)) {
+      return;
+    }
+
+    handleWarning(resp);
+
+    self.emit(&#x27;ready&#x27;);
+  }
+
+  self.client.capabilityCheck({
+      optional:[&#x27;wildmatch&#x27;, &#x27;relative_root&#x27;]
+    },
+    onCapability);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sane.common" id="apidoc.module.sane.common">module sane.common</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sane.common.assignOptions" id="apidoc.element.sane.common.assignOptions">
+        function <span class="apidocSignatureSpan">sane.common.</span>assignOptions
+        <span class="apidocSignatureSpan">(watcher, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">assignOptions = function (watcher, opts) {
+  opts = opts || {};
+  watcher.globs = opts.glob || [];
+  watcher.dot = opts.dot || false;
+  watcher.ignored = opts.ignored || false;
+
+  if (!Array.isArray(watcher.globs)) {
+    watcher.globs = [watcher.globs];
+  }
+  watcher.hasIgnore = Boolean(opts.ignored) &#x26;&#x26;
+    !(Array.isArray(opts) &#x26;&#x26; opts.length &#x3e; 0);
+  watcher.doIgnore = opts.ignored ? anymatch(opts.ignored) : function () {
+    return false;
+  };
+  return opts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.common.isFileIncluded" id="apidoc.element.sane.common.isFileIncluded">
+        function <span class="apidocSignatureSpan">sane.common.</span>isFileIncluded
+        <span class="apidocSignatureSpan">(globs, dot, doIgnore, relativePath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFileIncluded = function (globs, dot, doIgnore, relativePath) {
+  var matched;
+  if (globs.length) {
+    for (var i = 0; i &#x3c; globs.length; i++) {
+      if (minimatch(relativePath, globs[i], {dot: dot}) &#x26;&#x26;
+        !doIgnore(relativePath)) {
+        matched = true;
+        break;
+      }
+    }
+  } else {
+    // Make sure we honor the dot option if even we&#x27;re not using globs.
+    matched = (dot || minimatch(relativePath, &#x27;**/*&#x27;)) &#x26;&#x26;
+      !doIgnore(relativePath);
+  }
+  return matched;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
