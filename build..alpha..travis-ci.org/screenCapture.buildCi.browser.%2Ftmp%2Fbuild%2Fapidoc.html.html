@@ -56,6 +56,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.sane.sane">
+            function <span class="apidocSignatureSpan"></span>sane
+            <span class="apidocSignatureSpan">(dir, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.sane.NodeWatcher">
             function <span class="apidocSignatureSpan">sane.</span>NodeWatcher
             <span class="apidocSignatureSpan">(dir, opts)</span>
@@ -77,6 +86,15 @@
             <a class="apidocElementLiA" href="#apidoc.element.sane.WatchmanWatcher">
             function <span class="apidocSignatureSpan">sane.</span>WatchmanWatcher
             <span class="apidocSignatureSpan">(dir, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.recrawl_warning_dedupe">
+            function <span class="apidocSignatureSpan">sane.</span>recrawl_warning_dedupe
+            <span class="apidocSignatureSpan">(root, count)</span>
             </a>
 
         </li>
@@ -390,10 +408,78 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.sane.recrawl_warning_dedupe">module sane.recrawl_warning_dedupe</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.recrawl_warning_dedupe.recrawl_warning_dedupe">
+            function <span class="apidocSignatureSpan">sane.</span>recrawl_warning_dedupe
+            <span class="apidocSignatureSpan">(root, count)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.recrawl_warning_dedupe.findByRoot">
+            function <span class="apidocSignatureSpan">sane.recrawl_warning_dedupe.</span>findByRoot
+            <span class="apidocSignatureSpan">(root)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sane.recrawl_warning_dedupe.isRecrawlWarningDupe">
+            function <span class="apidocSignatureSpan">sane.recrawl_warning_dedupe.</span>isRecrawlWarningDupe
+            <span class="apidocSignatureSpan">(warningMessage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sane.recrawl_warning_dedupe.</span>RECRAWL_WARNINGS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sane.recrawl_warning_dedupe.</span>REGEXP</span>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.sane" id="apidoc.module.sane">module sane</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sane.sane" id="apidoc.element.sane.sane">
+        function <span class="apidocSignatureSpan"></span>sane
+        <span class="apidocSignatureSpan">(dir, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sane(dir, options) {
+  options = options || {};
+  if (options.watcher) {
+    var WatcherClass = require(options.watcher);
+    return new WatcherClass(dir, options);
+  } else if (options.poll) {
+    return new PollWatcher(dir, options);
+  } else if (options.watchman) {
+    return new WatchmanWatcher(dir, options);
+  } else {
+    return new NodeWatcher(dir, options);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -513,6 +599,22 @@ The watchman watcher class. Takes the same options as `sane(options, dir)`.
 
 The polling watcher class. Takes the same options as `sane(options, dir)` with the addition of:
 ...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.recrawl_warning_dedupe" id="apidoc.element.sane.recrawl_warning_dedupe">
+        function <span class="apidocSignatureSpan">sane.</span>recrawl_warning_dedupe
+        <span class="apidocSignatureSpan">(root, count)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RecrawlWarning(root, count) {
+  this.root = root;
+  this.count = count;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1428,6 +1530,103 @@ options:
 
 
 
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sane.recrawl_warning_dedupe" id="apidoc.module.sane.recrawl_warning_dedupe">module sane.recrawl_warning_dedupe</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sane.recrawl_warning_dedupe.recrawl_warning_dedupe" id="apidoc.element.sane.recrawl_warning_dedupe.recrawl_warning_dedupe">
+        function <span class="apidocSignatureSpan">sane.</span>recrawl_warning_dedupe
+        <span class="apidocSignatureSpan">(root, count)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RecrawlWarning(root, count) {
+  this.root = root;
+  this.count = count;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.recrawl_warning_dedupe.findByRoot" id="apidoc.element.sane.recrawl_warning_dedupe.findByRoot">
+        function <span class="apidocSignatureSpan">sane.recrawl_warning_dedupe.</span>findByRoot
+        <span class="apidocSignatureSpan">(root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findByRoot = function (root) {
+  for (var i = 0; i &lt; RECRAWL_WARNINGS.length; i++) {
+    var warning = RECRAWL_WARNINGS[i];
+    if (warning.root === root) {
+      return warning;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+RecrawlWarning.isRecrawlWarningDupe = function(warningMessage) {
+if (typeof warningMessage !== 'string') { return false; }
+var match = warningMessage.match(REG);
+if (!match) { return false; }
+var count = Number(match[1]);
+var root = match[2];
+
+var warning = RecrawlWarning.<span class="apidocCodeKeywordSpan">findByRoot</span>(root);
+
+if (warning) {
+  // only keep the highest count, assume count to either stay the same or
+  // increase.
+  if (warning.count &gt;= count ) {
+    return true;
+  } else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sane.recrawl_warning_dedupe.isRecrawlWarningDupe" id="apidoc.element.sane.recrawl_warning_dedupe.isRecrawlWarningDupe">
+        function <span class="apidocSignatureSpan">sane.recrawl_warning_dedupe.</span>isRecrawlWarningDupe
+        <span class="apidocSignatureSpan">(warningMessage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isRecrawlWarningDupe = function (warningMessage) {
+  if (typeof warningMessage !== 'string') { return false; }
+  var match = warningMessage.match(REG);
+  if (!match) { return false; }
+  var count = Number(match[1]);
+  var root = match[2];
+
+  var warning = RecrawlWarning.findByRoot(root);
+
+  if (warning) {
+    // only keep the highest count, assume count to either stay the same or
+    // increase.
+    if (warning.count &gt;= count ) {
+      return true;
+    } else {
+      // update the existing warning to the latest (highest) count
+      warning.count = count;
+      return false;
+    }
+  } else {
+    RECRAWL_WARNINGS.push(new RecrawlWarning(root, count));
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
 
 
